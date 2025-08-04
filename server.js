@@ -35,6 +35,9 @@ app.get("/", (req, res) => {
 });
 
 
+
+
+
 app.post('/download', async (req, res) => {
     const { url } = req.body;
     try {
@@ -66,7 +69,7 @@ app.post('/download', async (req, res) => {
             });
         });
     } catch (err) {
-        // console.error(err);
+      console.error("Download error:", err);
         res.status(500).json({ error: 'Failed to download video.' });
     }
 });
